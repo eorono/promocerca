@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('restaurant', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name');
+            $table->string('description', "MAX");
+            $table->string('schedule');
+            $table->string('logo', "MAX");
+            $table->string('long');
+            $table->string('lat');
         });
     }
 
