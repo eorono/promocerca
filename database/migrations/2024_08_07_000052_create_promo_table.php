@@ -14,6 +14,12 @@ return new class extends Migration
         Schema::create('promo', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->bigInteger("restaurant_id")->unsigned();
+            $table->string('name');
+            $table->string('description');
+            $table->string('schedule');
+            $table->foreign('restaurant_id')->references('id')->on('restaurant');
+
         });
     }
 
